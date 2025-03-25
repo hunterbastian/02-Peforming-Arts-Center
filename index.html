@@ -8,21 +8,23 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
 
 <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
 
 </head>
 
-<body>
 <div id="headerWrapper">
-	<header>
-        <img src="images/logo1x.png" alt="logo">
-		<span>Starlight Arts Pavilion</span>
-	</header>
+    <header>
+        <img src="images/logo1x.png" 
+             srcset="images/logo1x.png 1x, 
+                     images/logo2x.png 2x, 
+                     images/logo3x.png 3x" 
+             alt="Starlight Arts Pavilion logo">
+        <span>Starlight Arts Pavilion</span>
+        <a href="tel:555-000-0000" class="phone-number">555-000-0000</a>
+    </header>
 </div><!-- end header wrapper -->
-
-    
     
 <div id="navWrapper">
     <nav>
@@ -39,54 +41,147 @@
 <div id="mainWrapper">
     <main>
         <h1>Shows</h1>
-        <div class="parent1">
-            <div>
-                <h2>Name Here</h2>
-                <img src="images/show1.webp" alt="1st" width="400">
-            </div><!-- end child 1 -->
-            <div>
-                <h2>Name Here 2</h2>
-                <img src="images/show2.webp" alt="2nd" width="400">
-            </div><!-- end child 2 -->
-            <div>
-                <h2>Name Here 3</h2>
-                <img src="images/show3.webp" alt="3rd" width="400">
-            </div><!-- end child 3 -->
-            <div>
-                <h2>Name Here 4</h2>
-                <img src="images/show3.webp" alt="4th" width="400">
-            </div><!-- end child 4 -->
-            <div>
-                <h2>Name Here 5</h2>
-                <img src="images/show1.webp" alt="5th" width="400">
-            </div><!-- end child 5 -->
-            <div>
-                <h2>Name Here 6</h2>
-                <img src="images/show2.webp" alt="6th" width="400">
-            </div><!-- end child 6 -->
-            <div>
-                <h2>Name Here 7</h2>
-                <img src="images/show3.webp" alt="7th" width="400">
-            </div><!-- end child 7 -->
+        <div class="shows-grid">
+            <!-- Card 1 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show1.jpg" alt="The Phantom of the Opera" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>The Phantom of the Opera</h3>
+                    <p class="show-date">April 15-20, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show2.jpg" alt="Hamilton" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Hamilton</h3>
+                    <p class="show-date">May 5-10, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show3.jpg" alt="Les Misérables" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Les Misérables</h3>
+                    <p class="show-date">May 22-27, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show4.jpg" alt="The Lion King" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>The Lion King</h3>
+                    <p class="show-date">June 10-15, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show5.jpg" alt="Wicked" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Wicked</h3>
+                    <p class="show-date">June 25-30, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="show-card">
+                <div class="card-image">
+                <img src="images/show6.jpg" alt="The Odyssey" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h3>The Odyssey</h3>
+                <p class="show-date">July 8-13, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 7 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show7.jpg" alt="Dear Evan Hansen" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Dear Evan Hansen</h3>
+                    <p class="show-date">July 22-27, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 8 -->
+            <div class="show-card">
+            <div class="card-image">
+            <img src="images/show8.jpg" alt="Hercules" loading="lazy">
+            </div>
+            <div class="card-content">
+            <h3>Hercules</h3>
+            <p class="show-date">August 5-10, 2025</p>
+            </div>
+            </div>
+            
+            <!-- Card 9 -->
+            <div class="show-card">
+            <div class="card-image">
+            <img src="images/show9.jpg" alt="Harry Potter and the Cursed Child" loading="lazy">
+            </div>
+            <div class="card-content">
+            <h3>Harry Potter and the Cursed Child</h3>
+            <p class="show-date">August 19-24, 2025</p>
+            </div>
+            </div>
+            
+            <!-- Card 10 -->
+            <div class="show-card">
+                <div class="card-image">
+                    <img src="images/show10.jpg" alt="Aladdin" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Aladdin</h3>
+                    <p class="show-date">September 9-14, 2025</p>
+                </div>
+            </div>
+            
+            <!-- Card 11 -->
+            <div class="show-card">
+            <div class="card-image">
+            <img src="images/show11.jpg" alt="The Lord of the Rings" loading="lazy">
+            </div>
+            <div class="card-content">
+            <h3>The Lord of the Rings</h3>
+            <p class="show-date">September 23-28, 2025</p>
+            </div>
+            </div>
+            
+            <!-- Card 12 -->
+        <div class="show-card">
+        <div class="card-image">
+        <img src="images/show12.jpg" alt="Mary Poppins" loading="lazy">
         </div>
-
-        <p>Competently myocardinate cross-media infomediaries via end-to-end architectures. Enthusiastically implement end-to-end functionalities vis-a-vis excellent strategic theme areas. Conveniently supply enterprise action items with integrated innovation. Authoritatively cultivate sustainable portals for orthogonal core competencies. Distinctively coordinate team driven portals rather than synergistic processes.</p>
-
-        <p>Appropriately simplify enterprise information via leveraged total linkage. Progressively grow installed base infrastructures without open-source technologies. Distinctively embrace mission-critical internal or "organic" sources after competitive imperatives. Professionally whiteboard state of the art models through high-payoff expertise. Authoritatively exploit transparent users through virtual channels.</p>
-
-        <p>Interactively transition user-centric web services without scalable collaboration and idea-sharing. Holisticly restore next-generation data before seamless expertise. Monotonectally grow synergistic synergy without bricks-and-clicks ROI. Uniquely optimize 24/365 convergence after integrated synergy. Distinctively synthesize high-quality methodologies for performance based bandwidth.</p>
-
-     
-
+        <div class="card-content">
+        <h3>Mary Poppins</h3>
+        <p class="show-date">October 7-12, 2025</p>
+        </div>
+        </div>
+        </div>
     </main>
-</div><!-- end main wrapper -->
+</div>
     
 <div id="footerWrapper">
     <footer>
-        <p>Copyright &copy; 2025 Starlight Arts Pavilion Inc. All rights reserved. 
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
+        <p>2025 • Starlight Arts Pavilion • Hunter Bastian</p>
     </footer>
-</div> <!-- end footer wrapper -->
+</div>
    
 </body>
 </html> 
