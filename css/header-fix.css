@@ -1,0 +1,68 @@
+/* Apple-inspired Header layout */
+
+/* Mobile styles */
+#headerWrapper {
+  border-bottom: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  column-gap: 10px;
+  align-items: center;
+  padding: 0.7rem 10px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+header .phone-number {
+  display: none;
+}
+
+header .phone-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  grid-column: 3;
+  justify-self: end;
+}
+
+header .phone-icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Medium and larger screens */
+@media only screen and (min-width: 35rem) {
+  header {
+    grid-template-columns: 50px auto auto;
+    padding: 0.7rem 20px;
+  }
+  
+  header .phone-number {
+    display: block;
+    justify-self: end;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 400;
+    grid-column: 3;
+    font-size: 0.9rem;
+  }
+  
+  header .phone-icon {
+    display: none;
+  }
+} 

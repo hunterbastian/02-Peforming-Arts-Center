@@ -3,27 +3,52 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Navigation Example</title>
+	<title>Starlight Arts Pavilion</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/header-fix.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/apple-nav.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/apple-cards.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/apple-footer.css">
 
 <!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <div id="headerWrapper">
     <header>
-        <img src="images/logo1x.png" 
-             srcset="images/logo1x.png 1x, 
-                     images/logo2x.png 2x, 
-                     images/logo3x.png 3x" 
-             alt="Starlight Arts Pavilion logo">
-        <span>Starlight Arts Pavilion</span>
-        <a href="tel:555-000-0000" class="phone-number">555-000-0000</a>
+      <img
+        src="images/logo1x.png"
+        srcset="images/logo1x.png 1x,
+                images/logo2x.png 2x,
+                images/logo3x.png 3x"
+        alt="Starlight Arts Pavilion logo"
+      >
+      <span>Starlight Arts Pavilion</span>
+  
+      <!-- Phone icon for small screens -->
+      <a
+        href="tel:555-000-0000"
+        class="phone-icon"
+        aria-label="Call Starlight Arts Pavilion"
+      >
+        <!-- Option 1: Use an <img> (SVG or PNG icon) -->
+        <img src="images/phone-icon.svg" alt="" />
+        <!-- Option 2: Use no <img> and style a background-image in CSS -->
+      </a>
+  
+      <!-- Full phone number for medium/large screens -->
+      <a
+        href="tel:555-000-0000"
+        class="phone-number"
+      >
+        555-000-0000
+      </a>
     </header>
+  </div>
 </div><!-- end header wrapper -->
     
 <div id="navWrapper">

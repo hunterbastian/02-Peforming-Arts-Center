@@ -1,35 +1,72 @@
-/* NAVIGATION STUFF GOES HERE  */
-nav {
+/* Medium Breakpoint */
+@media only screen and (min-width: 35rem) {
 
-    ul {
-        display: flex;
-        justify-content: flex-start;
-        column-gap: $gutter;
-    } // end ul
 
-    ul li a {
-        margin: 10px 0
+    @media (min-width: 35rem) {
+        /* Nav in a horizontal row */
+        nav ul {
+          display: flex; 
+          gap: 1rem; 
+          /* or justify-content: flex-start, etc. */
+        }
+      
+        /* Two-column layout for shows */
+        .shows-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+    /* NAVIGATION STUFF GOES HERE  */
+    nav {
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            column-gap: $gutter;
+        }
+
+        ul li a {
+            margin: 10px 0
+        }
+
+        ul li a:hover {
+            text-decoration: underline 2px $accentColor;
+        }
     }
 
-    ul li a:hover {
-        text-decoration: underline 2px $accentColor;
-    } // end hover
-} // end nav
-
-// In medium.scss
-.shows-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  header {
-    grid-template-columns: 50px auto auto;
-    
-    .phone-number {
-      display: block; /* Show phone number on medium screens */
-      justify-self: end;
+    /* Shows Grid - Tablet Layout */
+    .shows-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
+        gap: 1.5rem;
+        padding: $gutter 2rem;
     }
-    
-    .mobile-phone-icon {
-      display: none; /* Hide phone icon on medium screens */
+
+    .show-card {
+        .card-image {
+            height: 220px; /* Slightly taller for tablet */
+        }
+
+        .card-content {
+            h3 {
+                font-size: 1.1rem; /* Slightly larger font for tablet */
+            }
+        }
     }
-  }
+
+    /* Fix header layout for medium screens */
+    header {
+        grid-template-columns: 50px auto auto;
+        
+        .phone-number {
+            display: block;
+            justify-self: end;
+            color: $primaryColor;
+            text-decoration: none;
+            font-weight: $normalWeight;
+            grid-column: 3;
+        }
+        
+        .phone-icon {
+            display: none;
+        }
+    }
+} /* Don't forget this closing bracket */

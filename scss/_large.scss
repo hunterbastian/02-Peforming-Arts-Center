@@ -1,16 +1,34 @@
-header, nav, main {
-    max-width: 960px;
-    margin: auto;
-}
+/* Large Breakpoint */
+@media only screen and (min-width: 64rem) {
+    header, nav, main {
+        max-width: 960px;
+        margin: auto;
+    }
 
-/* NAVIGATION STUFF GOES HERE  */
-nav ul li a {
-    padding: .5rem $gutter;
-    font-size: .9 rem;
-}
+    /* NAVIGATION STUFF GOES HERE  */
+    nav ul li a {
+        padding: .5rem $gutter;
+        font-size: .9rem;
+    }
 
-// In large.scss
-.shows-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
+    /* Shows Grid - Desktop Layout */
+    .shows-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+        gap: 2rem;
+        padding: $gutter 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .show-card {
+        .card-image {
+            height: 250px; /* Larger for desktop */
+        }
+
+        .card-content {
+            h3 {
+                font-size: 1.2rem; /* Larger font for desktop */
+            }
+        }
+    }
+} /* Don't forget this closing bracket */

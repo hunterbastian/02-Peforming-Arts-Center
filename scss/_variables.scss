@@ -1,9 +1,10 @@
-$primaryColor: #1d295f; 
-$secondaryColor: #7c1d47;
-$accentColor: #3990c3;
-$greyColor: #ccc;
+// Apple-inspired color palette
+$primaryColor: #000000;  // Apple uses black for primary elements
+$secondaryColor: #0071e3; // Apple blue for buttons/links
+$accentColor: #86868b; // Apple secondary text color
+$greyColor: #f5f5f7; // Light background color Apple uses
 
-$defaultFont:'Inter', sans-serif;
+$defaultFont:'Inter', sans-serif; // Keep Inter as it's similar to Apple's SF Pro
 $lightWeight: 300;
 $normalWeight: 500;
 $leading: 150%;

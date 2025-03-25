@@ -1,0 +1,115 @@
+/* Apple-inspired Cards */
+
+main {
+  padding: 1.5rem 0;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000000;
+  border-bottom: none;
+  padding: 1.5rem 20px 0.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.shows-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.show-card {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.show-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.show-card .card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.show-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.show-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.show-card .card-content {
+  padding: 20px;
+}
+
+.show-card .card-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.show-card .card-content .show-date {
+  margin: 0;
+  color: #0071e3;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Medium screens */
+@media only screen and (min-width: 35rem) {
+  .shows-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 0 25px;
+  }
+  
+  .show-card .card-image {
+    height: 220px;
+  }
+  
+  .show-card .card-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 64rem) {
+  .shows-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .show-card .card-image {
+    height: 250px;
+  }
+  
+  .show-card .card-content h3 {
+    font-size: 1.2rem;
+  }
+} 

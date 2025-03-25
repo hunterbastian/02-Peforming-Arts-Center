@@ -1,0 +1,27 @@
+/* Apple-inspired Footer */
+
+#footerWrapper {
+  background-color: #f5f5f7;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+footer {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #86868b;
+  line-height: 1.4;
+  /* Remove box styling */
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+} 

@@ -26,31 +26,49 @@ body {
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-    border-bottom: 1px solid $greyColor;
+  border-bottom: 1px solid $greyColor;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  column-gap: $gutter;
+  align-items: center;
+  padding: 0.5rem $gutter;
+  
+  img {
+    max-width: 100%;
   }
   
-  header {
-    display: grid;
-    grid-template-columns: 40px 1fr 40px;
-    column-gap: $gutter;
-    align-items: center;
-    padding: 0.5rem $gutter;
-    
-    img {
-      max-width: 100%;
-    }
-    
-    span {
-      font-size: 1.2rem;
-      font-weight: $lightWeight;
-      color: $primaryColor;
-    }
-    
-    .phone-number {
-      display: none; /* Hide the actual phone number on small screens */
-    }
-} 
+  span {
+    font-size: 1.2rem;
+    font-weight: $lightWeight;
+    color: $primaryColor;
+  }
 
+  /* Phone number hidden on mobile */
+  .phone-number {
+    display: none; 
+  }
+  
+  /* Phone icon visible and in the correct grid position */
+  .phone-icon {
+    display: inline-block; 
+    width: 24px;
+    height: 24px;
+    grid-column: 3;
+    justify-self: end;
+  }
+}
+
+/* --------------------------- SMALL.SCSS --------------------------- */
+
+/* Remove duplicate phone styles that might be causing issues */
+// .phone-icon {
+//   display: inline-block; 
+//   width: 24px;
+//   height: 24px;
+// }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 
@@ -87,6 +105,36 @@ body {
 
 
 /* --------------------------- MAIN SHOWS PAGE --------------------------- */
+
+/* ---------------------------
+   Base (Mobile) Styles
+   --------------------------- */
+
+/* Nav defaults to stacked links on mobile */
+nav ul {
+  display: block; 
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+/* If needed, ensure each link is full-width */
+nav ul li a {
+  display: block;
+  padding: 0.8rem;
+}
+
+/* Single-column shows grid */
+.shows-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; 
+  padding: 1rem;
+}
+
 main {
     padding: 1rem $gutter;
     
@@ -97,82 +145,70 @@ main {
       border-bottom: 2px solid $primaryColor;
       padding: 0.5rem $gutter;
       margin-bottom: 2rem;
-      text-transform: uppercase; // Added from other style
+      text-transform: uppercase;
       letter-spacing: 1px;
-      text-align: left; // Kept your original alignment
+      text-align: left;
     }
+}
+
+/* Shows Grid - Mobile First */
+.shows-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* Single column for mobile */
+    gap: $gutter;
+    padding: $gutter;
+    width: 100%;
+    max-width: 100%;
+}
+
+.show-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04),
+                0 10px 24px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
     
-    .shows-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 0 0 20px 0; // Added some bottom padding from other style
-      
-      @media only screen and (min-width: 35rem) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-      
-      @media only screen and (min-width: 64rem) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    .show-card {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; // Added from other style
-      flex-direction: column; // Added from other style
-        display: flex !important; /* Force flex display */
-  flex-direction: column !important; /* Force column direction */
-      
-      &:hover {
+    &:hover {
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      }
-      
-      .card-image {
-        position: relative;
+    }
+    
+    .card-image {
         width: 100%;
-        height: 0;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 180px; /* Fixed height for mobile */
         overflow: hidden;
+        position: relative;
         
         img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          // We'll keep your implementation for images rather than adding the hover zoom
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-      }
-      
-      .card-content {
-        padding: 1rem;
+    }
+    
+    .card-content {
+        padding: $gutter;
         
         h3 {
-          margin: 0 0 0.5rem 0;
-          font-size: 1.2rem;
-          font-weight: $normalWeight;
-          color: $primaryColor;
+            margin: 0 0 5px 0;
+            font-size: 1rem; /* Smaller font for mobile */
+            font-weight: $normalWeight;
+            color: $primaryColor;
         }
         
         .show-date {
-          margin: 0;
-          color: #666;
-          font-size: 0.9rem;
-          font-weight: $lightWeight; // Added from other style
+            margin: 0;
+            color: $secondaryColor;
+            font-size: 0.8rem; /* Smaller font for mobile */
+            font-weight: $lightWeight;
         }
-      }
     }
-  }
+}
 
-  /* Shows Grid - For mobile view */
+/* Shows Grid - For mobile view */
 .shows-grid {
     display: grid;
     grid-template-columns: 1fr;

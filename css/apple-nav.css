@@ -1,0 +1,134 @@
+/* Apple-inspired Navigation */
+
+#navWrapper {
+  background-color: rgba(245, 245, 247, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: none; /* Remove the dividing line */
+}
+
+nav {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 10px 0; /* Add padding for spacing between items */
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px; /* Add gap between menu items */
+}
+
+nav ul li {
+  list-style-type: none;
+  width: 80%; /* Slightly reduced to create margin on sides */
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  padding: 0.8rem 10px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.5); /* Subtle background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+}
+
+nav ul li a:hover {
+  color: #0071e3;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.9); /* Brighter background on hover */
+}
+
+nav ul li.active a {
+  background-color: rgba(0, 113, 227, 0.1); /* Light blue background for active */
+  color: #0071e3;
+  border-radius: 10px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 113, 227, 0.2); /* Light blue border */
+}
+
+/* Medium screens */
+@media only screen and (min-width: 35rem) {
+  nav {
+    padding: 0; /* Reset padding for medium screens */
+  }
+  
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  nav ul li {
+    width: auto; /* Reset width for medium screens */
+    position: relative; /* Needed for hover effect positioning */
+  }
+  
+  nav ul li a {
+    padding: 0.5rem 1rem;
+    background-color: transparent; /* Remove default background */
+    border-radius: 18px; /* Prepare for hover rounded corners */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Remove border */
+    position: relative; /* For hover effect */
+    z-index: 1; /* Above the pseudo-element */
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(210, 210, 215, 0);
+    border-radius: 18px;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  
+  nav ul li a:hover {
+    color: #000000; /* Keep text dark on hover */
+    text-decoration: none;
+    background-color: transparent; /* Keep transparent */
+  }
+  
+  nav ul li a:hover::before {
+    background-color: rgba(210, 210, 215, 0.7); /* Apple's gray hover color */
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  nav ul li.active a {
+    background-color: transparent; /* Remove background */
+    border: none; /* Remove border */
+    border-radius: 18px;
+    color: #0071e3; /* Keep text blue */
+  }
+  
+  nav ul li.active a::before {
+    background-color: rgba(0, 113, 227, 0.1); /* Lighter blue background */
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 64rem) {
+  nav ul {
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+} 
